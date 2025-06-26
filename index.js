@@ -8,7 +8,10 @@ const authRoutes = require("./routes/authRoutes");
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://contact-book-frontend-one.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 
